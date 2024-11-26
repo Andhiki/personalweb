@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="sm:scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,8 @@
     <link rel="website icon" type="png" href="./img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/main.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.17/dist/lenis.min.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.17/dist/lenis.css">
 </head>
 <body class="min-h-screen bg-slate-50 dark:bg-zinc-900 dark:text-white">
     <header class="bg-zinc-900 text-white sticky top-0 z-10">
@@ -16,30 +18,40 @@
                 <a href="#hero">Andre<span class="text-indigo-700 dark:text-fruit-orange">.</span></a>
             </h1>
             <div>
-                <button id="hamburger-button" class="text-3xl md:hidden cursor-pointer">
-                    &#9776;
+                <button 
+                    id="hamburger-button" 
+                    class="text-3xl md:hidden cursor-pointer relative "
+                >
+                    <span id="hamburger-icon">&#9776;</span>
+                    <span 
+                        id="close-icon" 
+                        class="hidden text-4xl"
+                    >&times;</span>
                 </button>
-                    <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
-                        <a href="#about" class="hover:opacity-90">About</a>
-                        <a href="#projects" class="hover:opacity-90">Projects</a>
-                        <a href="#contact" class="hover:opacity-90">Contact</a>
-                    </nav>
+                <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
+                    <a href="#about" class="hover:opacity-90">About</a>
+                    <a href="#projects" class="hover:opacity-90">Projects</a>
+                    <a href="#contact" class="hover:opacity-90">Contact</a>
+                </nav>
             </div>
         </section>
-        <section id="mobile-menu" class="absolute top-0 bg-zinc-900 w-full text-5xl flex-col justify-content-center origin-top animate-open-menu hidden">
-            <button class="text-8xl self-end px-6">
-                &times;
-            </button>
-            <nav class="flex flex-col min-h-screen items-center py-8" aria-label="mobile">
-                <a href="#hero" class="w-full text-center py-6 hover:opacity-90">Home</a>
-                <a href="#about" class="w-full text-center py-6 hover:opacity-90">About</a>
-                <a href="#projects" class="w-full text-center py-6 hover:opacity-90">Projects</a>
-                <a href="#contact" class="w-full text-center py-6 hover:opacity-90">Contact</a>
-            </nav>
-        </section>
+      
+        <!-- Mobile Menu -->
+        <nav
+            id="mobile-menu"
+            class="fixed top-0 left-0 w-full h-full bg-zinc-900 text-white flex-col items-center justify-center space-y-12 text-3xl hidden z-20"
+            aria-label="mobile"
+        >
+            <div class="flex flex-col gap-8 text-center">
+                <a href="#hero" class="hover:opacity-80">Home</a>
+                <a href="#about" class="hover:opacity-80">About</a>
+                <a href="#projects" class="hover:opacity-80">Projects</a>
+                <a href="#contact" class="hover:opacity-80 mb-6">Contact</a>
+            </div>
+        </nav>
     </header>
     <main class="max-w-4xl mx-auto">
-        <section id="hero" class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 scroll-mt-40 widescreen:section-min-height tallscreen:section-min-height">
+        <section id="hero" class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 mb-12 scroll-mt-40 widescreen:section-min-height tallscreen:section-min-height bg-gradient-to-r from-indigo-700 via-purple-500 to-cyan-400 text-white">
             <h1 class="text-center text-paper-white text-3xl font-normal font-anton sm:text-6xl">
                 HOOKED BY <span class="text-indigo-700 dark:text-yellow-400">VISUALS</span>,<br>FASCINATED BY <span class="text-indigo-700 dark:text-cyan-400">TECHNOLOGY</span>,<br>FUELLED BY <span class="text-indigo-700 dark:text-purple-400">CRAFTSMANSHIP</span> AND<br>MEANINGFUL <span class="text-indigo-700 dark:text-fruit-orange">AESTHETICS</span>.<br><span class="text-indigo-700 dark:text-fruit-orange">-</span> VSK
             </h1>
@@ -49,7 +61,7 @@
             <h2 class="text-4xl font-bold text-center sm:text:5xl mb-6 text-slate-900 dark:text-white">
                 About Me
             </h2>
-            <div id="hero" class="flex flex-col-reverse sm:flex-row p-2 items-center gap-8 mb-12 scroll-mt-40">
+            <div class="flex flex-col-reverse sm:flex-row p-2 items-center gap-8 mb-12 scroll-mt-40">
                 <article class="sm:w-1/2">
                     <h2 class="max-w-md text-xl font-bold text-center sm:text-5xl sm:text-left text-slate-900 dark:text-white">
                         YOU ARE MY <span class="text-indigo-700 dark:text-indigo-300">SUNSHINE</span> MY ONLY SUNSHINE

@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'anton' : ['"Anton"', 'sans-serif'],
+      'parkinsans' : ['"Parkinsans', 'sans-serif'],
     },
     extend: {
       colors: {
